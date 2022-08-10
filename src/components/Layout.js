@@ -5,18 +5,31 @@ import Navbar from "../components/Navbar";
 import "./all.sass";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
-import IdentityModal, { useIdentityContext } from "react-netlify-identity-widget"
+import IdentityModal, {
+  useIdentityContext,
+} from "react-netlify-identity-widget";
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
 
-  const identity = useIdentityContext()
+  const identity = useIdentityContext();
   const name =
-    (identity && identity.user && identity.user.user_metadata && identity.user.user_metadata.name) || "NoName"
+    (identity &&
+      identity.user &&
+      identity.user.user_metadata &&
+      identity.user.user_metadata.name) ||
+    "NoName";
 
-  console.log(name);
-  console.log(JSON.stringify(identity))
-  
+  const email =
+    (identity &&
+      identity.user &&
+      identity.user.user_metadata &&
+      identity.user.user_metadata.email) ||
+    "EmailIsMissing";
+
+  console.log(email);
+  console.log(JSON.stringify(identity.user));
+
   return (
     <div>
       <Helmet>
