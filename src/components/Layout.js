@@ -28,8 +28,8 @@ const TemplateWrapper = ({ children }) => {
     "EmailIsMissing";
 
   // console.log(email);
-  console.log(JSON.stringify(identity.email));
-  //console.table(JSON.stringify(identity));
+  console.log(JSON.stringify(identity.user));
+  console.log(JSON.stringify(identity));
 
   return (
     <div>
