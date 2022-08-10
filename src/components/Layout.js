@@ -28,9 +28,7 @@ const TemplateWrapper = ({ children }) => {
     "EmailIsMissing";
 
   // console.log(email);
-  console.log(JSON.stringify(identity));
-  console.log(identity.user);
-
+  console.log(JSON.stringify(identity.user));
 
   return (
     <div>
