@@ -5,9 +5,14 @@ import Navbar from "../components/Navbar";
 import "./all.sass";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
+import { useIdentityContext } from 'react-netlify-identity-gotrue'
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
+  const identity = useIdentityContext()
+
+  console.log(identity)
+  
   return (
     <div>
       <Helmet>

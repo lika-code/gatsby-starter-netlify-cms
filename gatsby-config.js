@@ -80,6 +80,12 @@ module.exports = {
         purgeOnly: ["/all.sass"], // applies purging only on the bulma css file
       },
     }, // must be after other CSS plugins
+    {
+      resolve: `gatsby-plugin-netlify-identity-gotrue`,
+      options: {
+        url: `https://62f3620fcb337709433b48b5--zingy-queijadas-b05ad0.netlify.app` // ❗REQUIRED❗
+      }
+    },
     "gatsby-plugin-netlify", // make sure to keep it last in the array
   ],
 };
