@@ -81,9 +81,9 @@ module.exports = {
       },
     }, // must be after other CSS plugins
     {
-      resolve: `gatsby-plugin-netlify-identity-gotrue`,
+      resolve: `gatsby-plugin-netlify-identity`,
       options: {
-        url: `https://62f3620fcb337709433b48b5--zingy-queijadas-b05ad0.netlify.app` // ❗REQUIRED❗
+        url: `https://master--zingy-queijadas-b05ad0.netlify.app`, // required!
       }
     },
     "gatsby-plugin-netlify", // make sure to keep it last in the array

@@ -5,13 +5,17 @@ import Navbar from "../components/Navbar";
 import "./all.sass";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
-import { useIdentityContext } from 'react-netlify-identity-gotrue'
+import IdentityModal, { useIdentityContext } from "react-netlify-identity-widget"
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
-  const identity = useIdentityContext()
 
-  console.log(identity)
+  const identity = useIdentityContext()
+  const name =
+    (identity && identity.user && identity.user.user_metadata && identity.user.user_metadata.name) || "NoName"
+
+  console.log(name);
+  console.log(JSON.stringify(identity))
   
   return (
     <div>
